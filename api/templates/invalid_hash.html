@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invalid Hash Code</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'product_info.css' %}">
+</head> 
+<body>
+    <div class="navbar">
+        <a href="{% url 'user_page' %}" class="nav-btn" id="backward">&#8249; Backward</a>
+    </div>
+    <div class="container"> 
+    <div class="authentic-message">Product is not Authentic</div>
+    <p>The hash code you entered is invalid. <br>Please try again.</p>
+</div>
+</body>
+</html>

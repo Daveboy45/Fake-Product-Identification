@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}" class="nav-btn" id="backward">&#8249; Backward</a>
+    </div>
+    <div class="login-container fade-in">
+        <h2>Admin Login</h2>
+        <form action="{% url 'admin_login' %}" method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+            <a href="{% url 'admin_signup' %}" class="form-label">Dont have an account?</a>
+        </form>
+    </div>
+    <script src="{% static 'admin_page.js' %}"></script>
+</body>
+</html>

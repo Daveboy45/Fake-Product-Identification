@@ -1,0 +1,52 @@
+<!-- api/templates/index.html -->
+{% load static %}
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Product Identification Using Block Chain</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage.css' %}">
+</head>
+<body>
+    <div class="content-container">
+        <!-- Content will be loaded here based on the navigation -->
+        <!-- <h2>Welcome to Fake Product Identification</h2>
+        <p>Please select your login option:</p>
+        <a href="{% url 'admin_login' %}"><button>Admin Login</button></a>
+        <a href="{% url 'user_login' %}"><button>User Login</button></a> -->
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-text">
+                <h2>Welcome to Fake <br/> Product <br/> Identification_
+                <br/><span class="bc">using Blockchain</span>
+                <p class="hero-text-info">
+                    Identifies Fake Product using Blockchain Development
+                </p>
+                <!-- Get Started Button -->
+                <!-- <p>
+                    <button class="hero-button">
+                        <a href="{% url 'admin_signup' %}" class="no-link">Get Started</a>
+                    </button>
+                </p> -->
+                </h2>
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <h3 class="hero-text-info2">Please select Login option</h3>
+            <button type="submit" class="single-group-button">
+                <a href="{% url 'admin_signup' %}" class="no-link">ADMIN?</a>
+            </button>
+            <button type="submit" class="single-group-button">
+                <a href="{% url 'user_signup' %}" class="no-link">USER?</a>
+            </button>
+        </div>
+    </div>
+    <div class="coded-footer">
+        <footer>
+            <p>&copy; 2024 Yomi Denzelites</p>
+        </footer>
+    </div>
+    <script src="{% static 'homepage.js' %}"></script>
+</body>
+</html>

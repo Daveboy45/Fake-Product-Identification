@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="{% static 'user_page.css' %}">
+
+    
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}" class="nav-btn" id="logout">Log Out</a>
+    </div>
+    <h1>Verify Product</h1>
+    <form id="verify-form" action="{% url 'user_page' %}" method="POST">
+        {% csrf_token %}
+        <label for="hash_code">Enter Hash Code:</label>
+        <input type="text" id="hash_code" name="hash_code" required>
+        <button type="submit">Verify</button>
+    </form>
+</body>
+</html>

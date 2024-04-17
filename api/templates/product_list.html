@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="{% static 'product_list_styles.css' %}">
+
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'admin_page' %}" class="nav-btn" id="backward">&#8249; Backward</a>
+    </div>
+    <h1>Product List</h1>
+    <ul>
+        {% for product in products %}
+        <li>{{ product.name }} - {{ product.brand }} - ${{ product.price }} - {{product.hash_code}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'admin_page.css' %}">
+</head>
+<style>
+    .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-btn {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+#logout {
+    background-color: #dc3545; /* Red color */
+}
+
+#logout:hover {
+    background-color: #c82333; /* Darker red color on hover */
+}
+
+</style>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}" class="nav-btn" id="logout">Log Out</a>
+    </div>
+    
+    
+    <div class="admin-container">
+        <h2>Register Product</h2>
+        <form id="product-form" action="{% url 'admin_page' %}" method="post">
+            {% csrf_token %}
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="brand">Product Brand:</label>
+            <input type="text" id="brand" name="brand" required><br><br>
+            <label for="price">Product Price:(In dollars $)</label>
+            <input type="text" id="price" name="price" required><br><br>
+            <label for="manufacturer_id">Manufacturer's ID:</label>
+            <input type="text" id="manufacturer_id" name="manufacturer_id" required><br><br>
+            <label for="product_sn">Product SN:</label>
+            <input type="text" id="product_sn" name="product_sn" required><br><br>
+            <button type="submit">Register</button>
+        </form>
+        <button id="show-products-btn">
+            <a href="{% url 'product_list' %}" class="no-link">Show Products</a>
+        </button>
+        <button id="show-products-btn">
+            <a href="{% url 'delete_products' %}" class="no-link">Delete Products</a>
+        </button>
+
+        
+      
+    </div>
+</body>
+</html>

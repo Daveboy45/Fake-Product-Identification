@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Products</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'delete_product.css' %}">
+</head>
+<body>
+  <form method="post" action="{% url 'delete_products' %}">
+    {% csrf_token %}
+    <label for="products">Select products to delete:</label><br>
+    <select name="products" multiple>
+      {% for product in products %}
+        <option value="{{ product.id }}">{{ product.name }}</option>
+      {% endfor %}
+    </select><br>
+    <button type="submit">Delete Selected Products</button>
+  </form>
+</body>
+</html>
+
+
+
+  

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("C:\Users\user\Desktop\Blockchain_Project\fake_product_identification\api\static\img\block5.jpg");
+            background-size: cover;
+            background-position: center top; /* Shift the image upwards */
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+    .nav-btn {
+        color: white;
+        text-decoration: none;
+        }
+
+    .nav-btn:hover {
+        text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'admin_page' %}" class="nav-btn" id="backward">&#8249; Backward</a>
+    </div>
+    <div class="container">
+        <h1>Registration Successful</h1>
+        <p>Your product has been successfully registered.</p>
+        <p>Transaction Hash: <span class="highlight">{{ tx_hash }}</span></p>
+        <p>Hash Code: <span class="highlight">{{ hash_code }}</span></p>
+    </div>
+</body>
+</html>
